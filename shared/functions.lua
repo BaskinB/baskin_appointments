@@ -1,0 +1,1 @@
+VORPcore = exports.vorp_core:GetCore() -- NEW includes  new callback system
