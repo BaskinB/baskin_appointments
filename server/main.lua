@@ -27,15 +27,14 @@ RegisterServerEvent('tgrp_appointments:InsertCreatedAppointmentIntoDB', function
 end)
 
 RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(job)
-    local timestamp = os.date("%m/%d/" .. Config.Year)
     local _source = source
     local Character = VORPcore.getUser(source).getUsedCharacter
     local job = Character.job
     -- Fetch all entries from the appointments table for the specified job
-    local query = "SELECT * FROM appointments WHERE job = @job"
-    MySQL.Async.fetchAll(query, {['@job'] = job, {['@created_at'] = timestamp}}, function(appointments)
-        if #appointments > 0 then
-            -- Sending appointments for the specified job to the client
+    local query = "SELECT charname, telegram, reason, created_at FROM appointments WHERE job = @job"
+    print()
+    MySQL.Async.fetchAll(query, {['@job'] = job}, function(appointments)
+        if appointments and #appointments > 0 then
             TriggerClientEvent('tgrp_appointments:DisplayAllAppointments', _source, appointments)
         else
             print("No appointments found for the specified job.")

@@ -377,6 +377,8 @@ end
 	-- Function to update the menu with appointment buttons
 	
 RegisterNetEvent('tgrp_appointments:DisplayAllAppointments', function (appointments)
+	CheckAppointmentPage = nil
+	OpenMainMenu(true)
 	for k, appointment in ipairs(appointments) do
 		local label = appointment.charname
 		CheckAppointmentPage:RegisterElement('button', {
@@ -403,7 +405,7 @@ function CheckAppointment(appointment)
 		style = {}
 	})
 	AppointmentPage:RegisterElement('subheader', {
-		value = appointment.timestamp,
+		value = appointment.created_at,
 		slot = "header",
 		style = {}
 	})
