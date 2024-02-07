@@ -7,17 +7,21 @@ version '0.0.1'
 author 'Baskin'
 
 client_scripts {
-   'client/cl_main.lua',
+   'client/main.lua',
+   'client/menu.lua',
    'client/functions.lua'
 }
 
 server_scripts {
    '@oxmysql/lib/MySQL.lua',
-   'server/sv_main.lua',
+   'server/main.lua',
 }
 
 shared_scripts {
-   'config.lua'
+   'config.lua',
+   --'shared/locale.lua',
+   --'languages/*.lua',
+   'shared/functions.lua'
 }
 
 --------------------------------------------------------------------------------------
