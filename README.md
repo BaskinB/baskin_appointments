@@ -83,7 +83,7 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 
 - [Feather Framework](https://github.com/FeatherFramework) for Feather-Menu.
 - [Bryce Canyon County Scripts](https://github.com/BryceCanyonCounty) for BCC-Utils.
-- [Fistofury](https://github.com/Fistsofury) for the Menu Code inspirationt.
+- [Fistofury](https://github.com/Fistsofury) for the Menu Code inspiration.
 
 ## Getting Started
 
