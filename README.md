@@ -1,24 +1,35 @@
-<h1 align="center">
-  <a href="https://github.com/BaskinB/baskin_appointments">
-    <!-- Please provide path to your logo here -->
-    Baskin's Appointment
-  </a>
-</h1>
-
-<div align="center">
-  Baskin Appointments
-  <br />
-  <a href="#about"><strong>Explore the screenshots »</strong></a>
-  <br />
-</div>
-
 <div align="center">
 <br />
+
+<br />
+<div align="center">
+  <a href="https://github.com/BaskinB/baskin_appointments">
+
+  </a>
+
+  <h1 align="center">Baskin Appointments</h1>
+
+  <p align="center">
+    A RedM script developed with love by BaskinB!
+    <br />
+    <a href="#about"><strong>Explore the screenshots »</strong></a>
+    <br />
+    <br />
+    <a href="#installation">Installation</a>
+    ·
+    <a href="https://github.com/BaskinB/baskin_appointment/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/BaskinB/baskin_appointment/issues">Request Feature</a>
+  </p>
+</div>
 
 <!-- [![Project license](https://img.shields.io/github/license/BaskinB/REPO_SLUG.svg?style=flat-square)](LICENSE) -->
 
 [![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 [![code with love by BaskinB](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-BaskinB-ff1414.svg?style=flat-square)](https://github.com/BaskinB)
+### Built With
+![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
+![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 
 </div>
 
@@ -42,6 +53,10 @@
 ## About
 A RedM script that seamlessly facilitates the streamlined management of appointments within businesses by enabling the creation of appointments and providing a user-friendly interface thanks to Feather Menu for employees to effortlessly check and manage them.
 
+|                               Showcase                             |
+| :-------------------------------------------------------------------: |
+| <video src="https://github.com/BaskinB/baskin_appointments/assets/54458253/1575f345-b8a5-450f-bf5d-38208b88f716"> |
+
 <details>
 <summary>Screenshots</summary>
 <br>
@@ -60,6 +75,10 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 
 </details>
 
+
+
+</details>
+
 ## Acknowledgements
 
 - [Feather Framework](https://github.com/FeatherFramework) for Feather-Menu.
@@ -70,10 +89,10 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 
 ### Prerequisites
 
-> - [BCC-Utils](https://github.com/BryceCanyonCounty/bcc-utils)
-> - [Feather Menu](https://github.com/FeatherFramework/feather-menu)
-> - [Vorp Core](https://github.com/VORPCORE/vorp-core-lua)
-> - [Vorp Character](https://github.com/VORPCORE/vorp_character-lua)
+- [BCC-Utils](https://github.com/BryceCanyonCounty/bcc-utils)
+- [Feather Menu](https://github.com/FeatherFramework/feather-menu)
+- [Vorp Core](https://github.com/VORPCORE/vorp-core-lua)
+- [Vorp Character](https://github.com/VORPCORE/vorp_character-lua)
 
 ### Installation
 
