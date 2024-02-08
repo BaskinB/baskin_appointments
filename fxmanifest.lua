@@ -7,7 +7,6 @@ version '0.0.1'
 author 'Baskin'
 
 client_scripts {
-   'client/main.lua',
    'client/menu.lua',
    'client/functions.lua'
 }
@@ -15,14 +14,14 @@ client_scripts {
 server_scripts {
    '@oxmysql/lib/MySQL.lua',
    'server/main.lua',
-   'server/functions.lua'
+   'server/functions.lua',
 }
 
 shared_scripts {
    'config.lua',
-   --'shared/locale.lua',
-   --'languages/*.lua',
-   'shared/functions.lua'
+   'shared/functions.lua',
+   'shared/locale.lua',
+   'languages/*.lua'
 }
 
 --------------------------------------------------------------------------------------
@@ -30,11 +29,8 @@ shared_scripts {
 ---------------- Dependencies -------------------------------------------------------
 ---- What other scripts (if any) does your script depend on. REMOVE THIS IF NONE ----
 dependencies { 
-    'vorp_core'
+    'vorp_core',
+    'vorp_character',
+    'bcc-utils',
+    'feather-menu',
 }
---------------------------------------------------------------------------------------
-
----------------- Exports -------------------------------------------------------------
-------------- If you need ------------------------------------------------------------
-exports {}
---------------------------------------------------------------------------------------

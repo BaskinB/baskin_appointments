@@ -1,11 +1,3 @@
----------------------------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------- Server File (This is code that is run globally on the server) ----------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
----------------- VORP Core Export API Examples ----------------
--- local Character = VorpCore.getUser(_source).getUsedCharacter
-
 RegisterServerEvent('tgrp_appointments:InsertCreatedAppointmentIntoDB', function(appointmentData)
     local timestamp = os.date("%m/%d/" .. Config.Year)
     local query = "INSERT INTO appointments (id, job, charname, reason, telegram, created_at) VALUES (?, ?, ?, ?, ?, ?)"
@@ -19,9 +11,9 @@ RegisterServerEvent('tgrp_appointments:InsertCreatedAppointmentIntoDB', function
         timestamp
     }, function(rowsChanged)
         if rowsChanged > 0 then
-            print("Appointment inserted successfully!")
+            print("\027[1m\027[32m[Baskin_Appointment] \027[0mAppointment inserted successfully!")
         else
-            print("Failed to insert appointment.")
+            print("\027[1m\027[31m[Baskin_Appointment] \027[0mFailed to insert appointment.")
         end
     end)
 end)
@@ -36,7 +28,7 @@ RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(appointment
         if appointments and #appointments > 0 then
             TriggerClientEvent('tgrp_appointments:DisplayAllAppointments', _source, appointments)
         else
-            print("No appointments found for the specified job.")
+            print('\027[1m\027[31m[Baskin_Appointment] \027[0mNo appointments found for the specified job')
         end
     end)
 end)
@@ -46,22 +38,9 @@ AddEventHandler('baskin_appointments:DeleteAppointment', function(appointmentId)
     local query = "DELETE FROM appointments WHERE id = ?"
     exports.oxmysql:execute(query, {appointmentId}, function(affectedRows)
         if affectedRows then
-            print("Appointment deleted successfully!")
+            print("\027[1m\027[32m[Baskin_Appointment] \027[0mAppointment deleted successfully!")
         else
-            print("Failed to delete appointment.")
+            print("\027[1m\027[31m[Baskin_Appointment] \027[0mFailed to delete appointment.")
         end
     end)
 end)
-
---[[ RegisterNetEvent('baskin_appointments:DeleteAppointment', function (appointId)
-    local _source = source
-    local Character = VORPcore.getUser(_source).getUsedCharacter
-
-    exports.oxmysql:execute('DELETE FROM appointments WHERE id = ?', {appointId}, function (rowsChanged)
-        if rowsChanged > 0 then
-            TriggerClientEvent("vorp:TipRight", _source, "Appointment deleted.", 5000)
-        else
-            TriggerClientEvent("vorp:TipRight", _source, "Failed to delete Appointment.", 5000)
-        end
-    end)
-end) ]]
