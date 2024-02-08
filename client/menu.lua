@@ -2,7 +2,7 @@
 
 CreateThread(function()
 	local PromptGroup = BccUtils.Prompts:SetupPromptGroup() -- Setup Prompt Group
-	local firstPrompt = PromptGroup:RegisterPrompt("Schedule Appointment", 0x760A9C6F, 1, 1, true, 'hold', { timedeventhash = "MEDIUM_TIMED_EVENT" }) -- Register your first prompt
+	local firstPrompt = PromptGroup:RegisterPrompt(_U("scheduleprompt"), 0x760A9C6F, 1, 1, true, 'hold', { timedeventhash = "MEDIUM_TIMED_EVENT" }) -- Register your first prompt
     while true do
         Wait(1)
         local inMenu = false -- Define and initialize inMenu here
@@ -52,11 +52,11 @@ function OpenMainMenu()
 				['2kwidth'] = '800px',
 				['4kwidth'] = '1000px',
 				style = {
-					['background-size'] = 'cover',  
+					--[[ ['background-size'] = 'cover',  
 					['background-repeat'] = 'no-repeat',
 					['background-position'] = 'center',
 					['padding'] = '10px 20px',
-					['margin-top'] = '5px',
+					['margin-top'] = '5px', ]]
 				},
 				contentslot = {
 					style = {

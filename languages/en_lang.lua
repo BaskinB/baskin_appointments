@@ -8,6 +8,8 @@ Locales["en_lang"] = {
     picktext = "Pick an Apppointment to View!",
     telegramtext = "Telegram",
     reasontext = "Reason",
+    -- Prompts
+    scheduleprompt = "Appointments",
     -- Buttons
     schedulebutton = "Schedule Appointment",
     viewbutton = "View Appointments",
@@ -26,6 +28,4 @@ Locales["en_lang"] = {
     -- Notifications
     schedulenotify = "You've scheduled an Appointment with ~e~",
     deletenotify = "You've removed the Appointment!"
-
-
 }
