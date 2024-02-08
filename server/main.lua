@@ -24,7 +24,7 @@ RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(appointment
     local job = Character.job
     -- Fetch all entries from the appointments table for the specified job
     local query = "SELECT id, charname, telegram, reason, created_at FROM appointments WHERE job = @job"
-    MySQL.Async.fetchAll(query, {['@job'] = job}, function(appointments)
+    exports.oxmysql.query(query, {['@job'] = job}, function(appointments)
         if appointments and #appointments > 0 then
             TriggerClientEvent('tgrp_appointments:DisplayAllAppointments', _source, appointments)
         else
