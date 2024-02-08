@@ -8,6 +8,7 @@ Locales["en_lang"] = {
     picktext = "Pick an Apppointment to View!",
     telegramtext = "Telegram",
     reasontext = "Reason",
+    noappointmenttext = "There are currently no appointments to view.",
     -- Prompts
     scheduleprompt = "Appointments",
     -- Buttons
