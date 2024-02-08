@@ -53,6 +53,10 @@
 ## About
 A RedM script that seamlessly facilitates the streamlined management of appointments within businesses by enabling the creation of appointments and providing a user-friendly interface thanks to Feather Menu for employees to effortlessly check and manage them.
 
+|                               Showcase                             |
+| :-------------------------------------------------------------------: |
+| <video src="https://github.com/BaskinB/baskin_appointments/assets/54458253/1575f345-b8a5-450f-bf5d-38208b88f716"> |
+
 <details>
 <summary>Screenshots</summary>
 <br>
@@ -71,13 +75,7 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 
 </details>
 
-<details>
-<summary>Showcase</summary>
-<br>
 
-|                               Regular Menu                               |
-| :-------------------------------------------------------------------: |
-| <video src="https://www.youtube.com/watch?v=2rH2Qk1NpBA"> |
 
 </details>
 
