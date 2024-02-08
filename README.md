@@ -26,6 +26,7 @@
 <summary>Table of Contents</summary>
 
 - [About](#about)
+- [Acknowledgements](#acknowledgements)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -33,22 +34,17 @@
 - [Roadmap](#roadmap)
 - [Support](#support)
 - [Author](#author)
-- [Acknowledgements](#acknowledgements)
 
 </details>
 
 ---
 
 ## About
-> **[?]**
-> A RedM script that seamlessly facilitates the streamlined management of appointments within businesses by enabling the creation of appointments and providing a user-friendly interface thanks to Feather Menu for employees to effortlessly check and manage them.
+A RedM script that seamlessly facilitates the streamlined management of appointments within businesses by enabling the creation of appointments and providing a user-friendly interface thanks to Feather Menu for employees to effortlessly check and manage them.
 
 <details>
 <summary>Screenshots</summary>
 <br>
-
-> **[?]**
-> Please provide your screenshots here.
 
 |                               Regular Menu                               |
 | :-------------------------------------------------------------------: |
@@ -64,6 +60,12 @@
 
 </details>
 
+## Acknowledgements
+
+- [Feather Framework](https://github.com/FeatherFramework) for Feather-Menu.
+- [Bryce Canyon County Scripts](https://github.com/BryceCanyonCounty) for BCC-Utils.
+- [Fistofury](https://github.com/Fistsofury) for the Menu Code inspirationt.
+
 ## Getting Started
 
 ### Prerequisites
@@ -76,15 +78,15 @@
 ### Installation
 
 
-> 1. Download this repo/release
-> 2. Extract and place `tgrp_appointments` into your `resources` folder
-> 3. Add `ensure tgrp_appointments` to your `server.cfg` file
-> 4. Run the SQL code for your database.
-> 4. Restart your server
+1. Download this repo/release
+2. Extract and place `tgrp_appointments` into your `resources` folder
+3. Add `ensure tgrp_appointments` to your `server.cfg` file
+4. Run the SQL code for your database.
+4. Restart your server
 
 ## Usage
 
-> The table below explains each configuration option and what
+The table below explains each configuration option and what
 
 **Base Settings**
  | Options | Description                                | Usage       |
@@ -102,6 +104,8 @@
 
 ## Roadmap
 
+## Bug Reports
+
 See the [open issues](https://github.com/BaskinB/baskin_appointments/issues) for a list of proposed features (and known issues).
 
 - [Top Feature Requests](https://github.com/BaskinB/baskin_appointments/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
@@ -109,9 +113,6 @@ See the [open issues](https://github.com/BaskinB/baskin_appointments/issues) for
 - [Newest Bugs](https://github.com/BaskinB/baskin_appointments/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ## Support
-
-
-> Provide additional ways to contact the project maintainer/maintainers.
 
 Reach out to Baskin here:
 - [GitHub issues](https://github.com/BaskinB/baskin_appointments/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
@@ -125,8 +126,3 @@ The original setup of this repository is by [BaskinB](https://github.com/BaskinB
 This project is licensed under the **GPL-3.0 license**.
 
 See [LICENSE](LICENSE) for more information.
-
-## Acknowledgements
-
-> If your work was funded by any organization or institution, acknowledge their support here.
-> In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
