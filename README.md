@@ -71,6 +71,16 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 
 </details>
 
+<details>
+<summary>Showcase</summary>
+<br>
+
+|                               Regular Menu                               |
+| :-------------------------------------------------------------------: |
+| <video src="https://www.youtube.com/watch?v=2rH2Qk1NpBA"> |
+
+</details>
+
 ## Acknowledgements
 
 - [Feather Framework](https://github.com/FeatherFramework) for Feather-Menu.
