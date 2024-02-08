@@ -27,16 +27,9 @@
 
 <!-- [![Project license](https://img.shields.io/github/license/BaskinB/REPO_SLUG.svg?style=flat-square)](LICENSE) -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+[![Pull Requests welcome](https://img.shields.io/badge/PRs-Welcome-ff69b4.svg?style=flat-square)](https://github.com/BaskinB/baskin_appointments/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![code with love by BaskinB](https://img.shields.io/badge/%3C%2F%3E%20With%20%E2%99%A5%20By-BaskinB-ff1414.svg?style=flat-square)](https://github.com/BaskinB)
 [![GPL-3.0 License][license-shield]][license-url]
-
-
-
-[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![code with love by BaskinB](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-BaskinB-ff1414.svg?style=flat-square)](https://github.com/BaskinB)
 ### Built With
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
@@ -176,5 +169,5 @@ See [LICENSE](LICENSE) for more information.
 [stars-url]: https://github.com/BaskinB/baskin_appointments/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/BaskinB/baskin_appointments/issues
-[license-shield]: https://img.shields.io/badge/GPL-gpl?style=for-the-badge&label=LICENSE&link=https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-you_like-blue
+[license-shield]: https://img.shields.io/badge/GPL-gpl?style=flat-square&label=License
 [license-url]: https://github.com/BaskinB/baskin_appointments/blob/main/LICENSE
