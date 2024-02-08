@@ -85,6 +85,16 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 - [Bryce Canyon County Scripts](https://github.com/BryceCanyonCounty) for BCC-Utils.
 - [Fistofury](https://github.com/Fistsofury) for the Menu Code inspiration.
 
+## Features
+
+1. Ability to Schedule Appointments as configured businesses.
+2. Ability to Check/Delete opened Appointments if employed by the Business.
+2. Configuration options for the entire script
+3. Menu which supports multiple resolutions.
+4. Database saving for Appointments
+5. VORPCore Support
+
+
 ## Getting Started
 
 ### Prerequisites
