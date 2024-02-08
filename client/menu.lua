@@ -1,3 +1,5 @@
+--[[ Credits to Fistoffury for the general menu code formatting ]]
+
 CreateThread(function()
 	local PromptGroup = BccUtils.Prompts:SetupPromptGroup() -- Setup Prompt Group
 	local firstPrompt = PromptGroup:RegisterPrompt("Schedule Appointment", 0x760A9C6F, 1, 1, true, 'hold', { timedeventhash = "MEDIUM_TIMED_EVENT" }) -- Register your first prompt
@@ -395,17 +397,7 @@ function CheckAppointment(appointment)
 	AppointmentPage:RouteTo()
 end
 
-
---[[ RegisterNetEvent('tgrp_appointments:DisplayAllAppointments')
-AddEventHandler('tgrp_appointments:DisplayAllAppointments', function(appointments)
-	
-    -- Handle the fetched data on the client side (e.g., display it)
-    for _, appointment in ipairs(appointments) do
-        print("Business ID: " .. appointment.id)
-        print("Character Name: " .. appointment.charname)
-        print("Reason: " .. appointment.reason)
-        print("Telegram: " .. appointment.telegram)
-        print("-----")  -- Separation between appointments
-        -- You may want to use other functions to display the data to the player.
-    end
-end) ]]
+--[[
+    --Sacred Comment
+    8========D
+]]
