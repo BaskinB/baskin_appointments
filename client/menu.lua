@@ -1,4 +1,4 @@
---[[ Credits to Fistoffury for the general menu code formatting ]]
+--[[ Credits to Fistofury for the general menu code formatting ]]
 
 CreateThread(function()
 	local PromptGroup = BccUtils.Prompts:SetupPromptGroup() -- Setup Prompt Group
@@ -9,7 +9,7 @@ CreateThread(function()
         local playerPed = PlayerPedId() -- Use local variable for PlayerPedId()
         local playerCoords = GetEntityCoords(playerPed)
         local sleep = true
-        for k, business in pairs(Config.Businesses) do
+        for _, business in pairs(Config.Businesses) do
             local dist = #(playerCoords - business.location)
             if dist < 1.5 then
                 sleep = false
@@ -39,7 +39,7 @@ function OpenMainMenu()
 	CheckAppointmentPage = nil
 	AppointmentPage 	 = nil
 
-	for k, business in pairs(Config.Businesses) do
+	for _, business in pairs(Config.Businesses) do
 		local playerPed = PlayerPedId() -- Use local variable for PlayerPedId()
         local playerCoords = GetEntityCoords(playerPed)
 		local dist = #(playerCoords - business.location)
@@ -51,7 +51,18 @@ function OpenMainMenu()
 				['1080width'] = '700px',
 				['2kwidth'] = '800px',
 				['4kwidth'] = '1000px',
-				style = {},
+				style = {
+					['background-size'] = 'cover',  
+					['background-repeat'] = 'no-repeat',
+					['background-position'] = 'center',
+					['padding'] = '10px 20px',
+					['margin-top'] = '5px',
+				},
+				contentslot = {
+					style = {
+						['max-height'] = '550px',  -- Fixed maximum height
+					} -- Fixed maximum height
+				},
 				draggable = false,
 				canclose = true
 			})
@@ -66,7 +77,7 @@ function OpenMainMenu()
 					style = {}
 				})
 				MainPage:RegisterElement('subheader', {
-					value = "Choose an Option.",
+					value = _U("optiontext"),
 					slot = "header",
 					style = {}
 				})
@@ -75,7 +86,7 @@ function OpenMainMenu()
 					style = {}
 				})
 				MainPage:RegisterElement('button', {
-					label = "Schedule Appointment",
+					label = _U("schedulebutton"),
 					style = {
 						-- ['background-image'] = 'none',
 						-- ['background-color'] = '#E8E8E8',
@@ -95,7 +106,7 @@ function OpenMainMenu()
 					}
 				})
 				MainPage:RegisterElement('button', {
-					label = "Close",
+					label = _U("closebutton"),
 					slot = "footer",
 					style = {
 						-- ['background-image'] = 'none',
@@ -127,7 +138,7 @@ function OpenMainMenu()
 				})
 			
 				SchedulePage:RegisterElement('subheader', {
-					value = "Schedule an Appointment.",
+					value = _U('scheduletext'),
 					slot = "header",
 					style = {}
 				})
@@ -137,24 +148,24 @@ function OpenMainMenu()
 				})
 				local charname = ''
 				SchedulePage:RegisterElement('input', {
-					label = "Name",
-					placeholder = "First Last!",
+					label = _U('namelabel'),
+					placeholder = _U('nameplace'),
 					persist = false,
 					style = {
+						['border-color'] = "#513e23"
 						-- ['background-image'] = 'none',
 						-- ['background-color'] = '#E8E8E8',
 						-- ['color'] = 'black',
 						-- ['border-radius'] = '6px'
 					}
 				}, function(data)
-					-- This gets triggered whenever the input value changes
-					print("Input Triggered: ", data.value)
+					-- This gets triggered whenever the input value change
 					charname = data.value
 				end)
 				local telegram = ''
 				SchedulePage:RegisterElement('input', {
-					label = "Telegram Number",
-					placeholder = "Telegram #",
+					label = _U('telelabel'),
+					placeholder = _U('teleplace'),
 					persist = false,
 					style = {
 						-- ['background-image'] = 'none',
@@ -164,13 +175,17 @@ function OpenMainMenu()
 					}
 				}, function(data)
 					-- This gets triggered whenever the input value changes
-					print("Input Triggered: ", data.value)
 					telegram = data.value
 				end)
+				SchedulePage:RegisterElement('subheader', {
+					value = _U('reasonlabel'),
+					slot = "content",
+					style = {}
+				})
 				local reason = ''
 				SchedulePage:RegisterElement('textarea', {
-					label = "Appointment Reason",
-					placeholder = "Your Reason!",
+					--label = _U('reasonlabel'),
+					placeholder = _U('reasonplace'),
 					rows = "4",
 					--cols = "33",
 					resize = false,
@@ -182,15 +197,15 @@ function OpenMainMenu()
 						-- ['border-radius'] = '6px'
 					}
 				}, function(data)
-					print("Input Triggered: ", data.value)
+					-- This gets triggered whenever the input value changes
 					reason = data.value
 				end)
-				SchedulePage:RegisterElement('bottomline', {
+				SchedulePage:RegisterElement('line', {
 					slot = "footer",
 					-- style = {}
 				})
 				SchedulePage:RegisterElement('button', {
-					label = "Submit",
+					label = _U('submitbutton'),
 					slot = "footer",
 					style = {
 						-- ['background-image'] = 'none',
@@ -207,13 +222,13 @@ function OpenMainMenu()
 						--VORPcore.AddWebhook("Business Appointment",webhook,desc)
 						local appointmentData = { job = business.job, charname = charname, reason = reason, telegram = telegram, created_at = timestamp}
 						TriggerServerEvent("tgrp_appointments:InsertCreatedAppointmentIntoDB", appointmentData)
-						VORPcore.NotifyObjective("You've scheduled an Appointment with ~e~"..business.name,5000)
+						VORPcore.NotifyObjective(_U("schedulenotify")..business.name,5000)
 						MainPage:RouteTo()
 
 						--MainPage:RouteTo()
 				end)
 				SchedulePage:RegisterElement('button', {
-					label = "Back",
+					label = _U("backbutton"),
 					slot = "footer",
 					style = {
 						-- ['background-image'] = 'none',
@@ -228,6 +243,10 @@ function OpenMainMenu()
 				}, function()
 					MainPage:RouteTo()
 				end)
+				SchedulePage:RegisterElement('bottomline', {
+					slot = "footer",
+					-- style = {}
+				})
 			end
 		
 			if not ViewPage then
@@ -236,10 +255,6 @@ function OpenMainMenu()
 					MainPage:RegisterElement('button', {
 						label = "View Appointments",
 						style = {
-							-- ['background-image'] = 'none',
-							-- ['background-color'] = '#E8E8E8',
-							-- ['color'] = 'black',
-							-- ['border-radius'] = '6px'
 						},
 						sound = {
 							action = "SELECT",
@@ -259,7 +274,7 @@ function OpenMainMenu()
 					style = {}
 				})
 				CheckAppointmentPage:RegisterElement('subheader', {
-					value = "Pick an Appointment to View!",
+					value = _U('picktext'),
 					slot = "header",
 					style = {}
 				})
@@ -268,7 +283,7 @@ function OpenMainMenu()
 					-- style = {}
 				})
 				CheckAppointmentPage:RegisterElement('button', {
-					label = "Back",
+					label = _U('backbutton'),
 					slot = "footer",
 					style = {
 						-- ['background-image'] = 'none',
@@ -298,7 +313,7 @@ end
 RegisterNetEvent('tgrp_appointments:DisplayAllAppointments', function (appointments)
 	CheckAppointmentPage = nil
 	OpenMainMenu(true)
-	for k, appointment in ipairs(appointments) do
+	for _, appointment in ipairs(appointments) do
 		local label = appointment.charname.." | "..appointment.created_at
 		CheckAppointmentPage:RegisterElement('button', {
 			label = label,
@@ -333,7 +348,7 @@ function CheckAppointment(appointment)
 		style = {}
 	})
 	AppointmentPage:RegisterElement('subheader', {
-		value = "Telegram",
+		value = _U('telegramtext'),
 		slot = "content",
 		style = {}
 	})
@@ -342,7 +357,7 @@ function CheckAppointment(appointment)
 		style = {}
 	})
 	AppointmentPage:RegisterElement('subheader', {
-		value = "Reason",
+		value = _U("reasontext"),
 		slot = "content",
 		style = {}
 	})
@@ -360,7 +375,7 @@ function CheckAppointment(appointment)
 		style = {}
 	})
 	AppointmentPage:RegisterElement('button', {
-		label = "Back",
+		label = _U('backbutton'),
 		slot = "footer",
 		style = {
 			-- ['background-image'] = 'none',
@@ -376,13 +391,10 @@ function CheckAppointment(appointment)
 		CheckAppointmentPage:RouteTo()
 	end)
 	AppointmentPage:RegisterElement('button', {
-		label = "Delete",
+		label = _U('deletebutton'),
 		slot = "footer",
 		style = {
-			-- ['background-image'] = 'none',
-			--['background-color'] = '#E8E8E8',
 			['color'] = '#ff454b',
-			-- ['border-radius'] = '6px'
 		},
 		-- sound = {
 		--     action = "SELECT",
@@ -390,7 +402,7 @@ function CheckAppointment(appointment)
 		-- },
 	}, function()
 		TriggerServerEvent('baskin_appointments:DeleteAppointment', appointment.id)
-		VORPcore.NotifyObjective("You've removed a Appointment",5000)
+		VORPcore.NotifyObjective(_U('deletenotify'),5000)
 		MainPage:RouteTo()
 		-- This gets triggered whenever the button is clicked
 	end)
