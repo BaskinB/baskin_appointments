@@ -22,6 +22,8 @@
 
 </div>
 
+---
+
 <details open="open">
 <summary>Table of Contents</summary>
 
@@ -36,8 +38,6 @@
 - [Author](#author)
 
 </details>
-
----
 
 ## About
 A RedM script that seamlessly facilitates the streamlined management of appointments within businesses by enabling the creation of appointments and providing a user-friendly interface thanks to Feather Menu for employees to effortlessly check and manage them.
