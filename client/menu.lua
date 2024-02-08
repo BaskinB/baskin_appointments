@@ -52,7 +52,7 @@ function OpenMainMenu()
 				['4kwidth'] = '1000px',
 				style = {},
 				draggable = false,
-				--canclose = false
+				canclose = true
 			})
 		end
 		
@@ -138,7 +138,7 @@ function OpenMainMenu()
 				SchedulePage:RegisterElement('input', {
 					label = "Name",
 					placeholder = "First Last!",
-					-- persist = false,
+					persist = false,
 					style = {
 						-- ['background-image'] = 'none',
 						-- ['background-color'] = '#E8E8E8',
@@ -154,7 +154,7 @@ function OpenMainMenu()
 				SchedulePage:RegisterElement('input', {
 					label = "Telegram Number",
 					placeholder = "Telegram #",
-					-- persist = false,
+					persist = false,
 					style = {
 						-- ['background-image'] = 'none',
 						-- ['background-color'] = '#E8E8E8',
@@ -173,7 +173,7 @@ function OpenMainMenu()
 					rows = "4",
 					--cols = "33",
 					resize = false,
-					-- persist = false,
+					persist = false,
 					style = {
 						-- ['background-image'] = 'none',
 						-- ['background-color'] = '#E8E8E8',
@@ -204,17 +204,13 @@ function OpenMainMenu()
 				}, function()
 						--local desc = "**Business Name:** \n "..name.."\n\n **Name:** \n"..charname.."\n\n **Telegram Number:** \n"..telegram.."\n\n **Reason:** \n"..reason
 						--VORPcore.AddWebhook("Business Appointment",webhook,desc)
-						MainMenu:Close({
-						})
-					
-						local appointmentData = {
-							job = business.job,
-							charname = charname,
-							reason = reason,
-							telegram = telegram,
-							timestamp = timestamp
-						}
+						local appointmentData = { job = business.job, charname = charname, reason = reason, telegram = telegram, created_at = timestamp}
+						print(appointmentData)
 						TriggerServerEvent("tgrp_appointments:InsertCreatedAppointmentIntoDB", appointmentData)
+						MainPage:RouteTo()
+						VORPcore.NotifyObjective("You've scheduled an Appointment with ~e~"..business.name,5000)
+
+						--MainPage:RouteTo()
 				end)
 				SchedulePage:RegisterElement('button', {
 					label = "Back",
@@ -372,6 +368,15 @@ function OpenMainMenu()
 		end
 	end
 end
+
+function MenuClose()
+	MainMenu:Close({
+		-- sound = {
+		--     action = "SELECT",
+		--     soundset = "RDRO_Character_Creator_Sounds"
+		-- }
+	})
+end
 	
 	-- Function to show appointment details (replace with your logic)
 	-- Function to update the menu with appointment buttons
@@ -470,6 +475,8 @@ function CheckAppointment(appointment)
 		--     soundset = "RDRO_Character_Creator_Sounds"
 		-- },
 	}, function()
+		TriggerServerEvent('baskin_appointments:DeleteAppointment', appointment.id)
+
 		-- This gets triggered whenever the button is clicked
 	end)
 	AppointmentPage:RouteTo()
