@@ -96,16 +96,16 @@
 **Business Settings**
 | Option | Description                               | Usage       |
 |---------------|--------------------------------------------|-------------|
-| Name | Assign a name for the Business, such as the Job Name. | string |
-| Job | Assign the Job which the appointments belong to. | string |
-| Location | Assign a location for the menu. | vector3 |
+| name | Assign a name for the Business, such as the Job Name. | string |
+| job | Assign the Job which the appointments belong to. | string |
+| location | Assign a location for the menu. | vector3 |
 
 ## Roadmap
 
 See the [open issues](https://github.com/BaskinB/baskin_appointments/issues) for a list of proposed features (and known issues).
 
 - [Top Feature Requests](https://github.com/BaskinB/baskin_appointments/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Top Bugs](https://github.com/GBaskinB/baskin_appointments/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
+- [Top Bugs](https://github.com/BaskinB/baskin_appointments/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
 - [Newest Bugs](https://github.com/BaskinB/baskin_appointments/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ## Support
@@ -122,7 +122,7 @@ The original setup of this repository is by [BaskinB](https://github.com/BaskinB
 
 ## License
 
-This project is licensed under the **GNU license**.
+This project is licensed under the **GNU 3 license**.
 
 See [LICENSE](LICENSE) for more information.
 
