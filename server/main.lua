@@ -26,12 +26,12 @@ RegisterServerEvent('tgrp_appointments:InsertCreatedAppointmentIntoDB', function
     end)
 end)
 
-RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(job)
+RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(appointmentId)
     local _source = source
     local Character = VORPcore.getUser(source).getUsedCharacter
     local job = Character.job
     -- Fetch all entries from the appointments table for the specified job
-    local query = "SELECT charname, telegram, reason, created_at FROM appointments WHERE job = @job"
+    local query = "SELECT id, charname, telegram, reason, created_at FROM appointments WHERE job = @job"
     MySQL.Async.fetchAll(query, {['@job'] = job}, function(appointments)
         if appointments and #appointments > 0 then
             TriggerClientEvent('tgrp_appointments:DisplayAllAppointments', _source, appointments)
@@ -41,7 +41,19 @@ RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(job)
     end)
 end)
 
-RegisterNetEvent('baskin_appointments:DeleteAppointment', function (appointId)
+RegisterServerEvent('baskin_appointments:DeleteAppointment')
+AddEventHandler('baskin_appointments:DeleteAppointment', function(appointmentId)
+    local query = "DELETE FROM appointments WHERE id = ?"
+    exports.oxmysql:execute(query, {appointmentId}, function(affectedRows)
+        if affectedRows then
+            print("Appointment deleted successfully!")
+        else
+            print("Failed to delete appointment.")
+        end
+    end)
+end)
+
+--[[ RegisterNetEvent('baskin_appointments:DeleteAppointment', function (appointId)
     local _source = source
     local Character = VORPcore.getUser(_source).getUsedCharacter
 
@@ -52,5 +64,4 @@ RegisterNetEvent('baskin_appointments:DeleteAppointment', function (appointId)
             TriggerClientEvent("vorp:TipRight", _source, "Failed to delete Appointment.", 5000)
         end
     end)
-    
-end)
+end) ]]

@@ -1,6 +1,6 @@
 CreateThread(function()
 	local PromptGroup = BccUtils.Prompts:SetupPromptGroup() -- Setup Prompt Group
-	local firstPrompt = PromptGroup:RegisterPrompt("Schedule Appointment", 0x4CC0E2FE, 1, 1, true, 'hold', { timedeventhash = "MEDIUM_TIMED_EVENT" }) -- Register your first prompt
+	local firstPrompt = PromptGroup:RegisterPrompt("Schedule Appointment", 0x760A9C6F, 1, 1, true, 'hold', { timedeventhash = "MEDIUM_TIMED_EVENT" }) -- Register your first prompt
     while true do
         Wait(1)
         local inMenu = false -- Define and initialize inMenu here
@@ -31,7 +31,6 @@ end)
 local MainMenu, MainPage, ViewPage, SchedulePage, AppointmentPage, CheckAppointmentPage
 
 function OpenMainMenu()
-	MainMenu 			 = nil
 	MainPage 			 = nil
 	ViewPage 			 = nil
 	SchedulePagePage 	 = nil
@@ -205,10 +204,9 @@ function OpenMainMenu()
 						--local desc = "**Business Name:** \n "..name.."\n\n **Name:** \n"..charname.."\n\n **Telegram Number:** \n"..telegram.."\n\n **Reason:** \n"..reason
 						--VORPcore.AddWebhook("Business Appointment",webhook,desc)
 						local appointmentData = { job = business.job, charname = charname, reason = reason, telegram = telegram, created_at = timestamp}
-						print(appointmentData)
 						TriggerServerEvent("tgrp_appointments:InsertCreatedAppointmentIntoDB", appointmentData)
-						MainPage:RouteTo()
 						VORPcore.NotifyObjective("You've scheduled an Appointment with ~e~"..business.name,5000)
+						MainPage:RouteTo()
 
 						--MainPage:RouteTo()
 				end)
@@ -249,82 +247,8 @@ function OpenMainMenu()
 						TriggerServerEvent('tgrp_appointments:GetAllAppointments', job)
 					end)
 				end
-				--[[ ViewPage:RegisterElement('button', {
-					label = 'Carmine Mascalli | '..'2-6-1901',
-					style = {
-						-- ['background-image'] = 'none',
-						-- ['background-color'] = '#E8E8E8',
-						-- ['color'] = 'black',
-						-- ['border-radius'] = '6px'
-					},
-					sound = {
-						action = "SELECT",
-						soundset = "RDRO_Character_Creator_Sounds"
-					},
-				}, function()
-					local AppointmentPage = MainMenu:RegisterPage('example:page')
-					AppointmentPage:RegisterElement('header', {
-						value = "Carmine Mascalli",
-						slot = "header",
-						style = {}
-					})
-					AppointmentPage:RegisterElement('subheader', {
-						value = '2-6-1901',
-						slot = "header",
-						style = {}
-					})
-					AppointmentPage:RegisterElement('bottomline', {
-						slot = "header",
-						style = {}
-					})
-					AppointmentPage:RegisterElement('subheader', {
-						value = "Telegram",
-						slot = "content",
-						style = {}
-					})
-					TextDisplay = AppointmentPage:RegisterElement('textdisplay', {
-						value = 'VB690',
-						style = {}
-					})
-					AppointmentPage:RegisterElement('subheader', {
-						value = "Reason",
-						slot = "content",
-						style = {}
-					})
-					TextDisplay = AppointmentPage:RegisterElement('textdisplay', {
-						value = 'HELLO WORLD',
-						style = {
-							['text-align'] = "left",
-							['padding'] = '10px 20px',
-							['max-height'] = '200px',  -- Fixed maximum height
-							['overflow-y'] = 'auto',   -- Allows vertical scrolling
-							['overflow-x'] = 'hidden', -- Prevents horizontal scrolling
-						}
-					})
-					AppointmentPage:RegisterElement('line', {
-						slot = "content",
-						style = {}
-					})
-					AppointmentPage:RegisterElement('button', {
-						label = "Delete",
-						slot = "footer",
-						style = {
-							-- ['background-image'] = 'none',
-							--['background-color'] = '#E8E8E8',
-							['color'] = 'red',
-							-- ['border-radius'] = '6px'
-						},
-						-- sound = {
-						--     action = "SELECT",
-						--     soundset = "RDRO_Character_Creator_Sounds"
-						-- },
-					}, function()
-						-- This gets triggered whenever the button is clicked
-					end)
-					AppointmentPage:RouteTo()
-				end) ]]
 			end
-		
+	
 			if not CheckAppointmentPage then
 				CheckAppointmentPage = MainMenu:RegisterPage('mainmenu:checkappoint:page')
 				CheckAppointmentPage:RegisterElement('header', {
@@ -368,24 +292,12 @@ function OpenMainMenu()
 		end
 	end
 end
-
-function MenuClose()
-	MainMenu:Close({
-		-- sound = {
-		--     action = "SELECT",
-		--     soundset = "RDRO_Character_Creator_Sounds"
-		-- }
-	})
-end
-	
-	-- Function to show appointment details (replace with your logic)
-	-- Function to update the menu with appointment buttons
 	
 RegisterNetEvent('tgrp_appointments:DisplayAllAppointments', function (appointments)
 	CheckAppointmentPage = nil
 	OpenMainMenu(true)
 	for k, appointment in ipairs(appointments) do
-		local label = appointment.charname
+		local label = appointment.charname.." | "..appointment.created_at
 		CheckAppointmentPage:RegisterElement('button', {
 			label = label,
 			style = {},
@@ -467,7 +379,7 @@ function CheckAppointment(appointment)
 		style = {
 			-- ['background-image'] = 'none',
 			--['background-color'] = '#E8E8E8',
-			['color'] = 'red',
+			['color'] = '#ff454b',
 			-- ['border-radius'] = '6px'
 		},
 		-- sound = {
@@ -476,7 +388,8 @@ function CheckAppointment(appointment)
 		-- },
 	}, function()
 		TriggerServerEvent('baskin_appointments:DeleteAppointment', appointment.id)
-
+		VORPcore.NotifyObjective("You've removed a Appointment",5000)
+		MainPage:RouteTo()
 		-- This gets triggered whenever the button is clicked
 	end)
 	AppointmentPage:RouteTo()
