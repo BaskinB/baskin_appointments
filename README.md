@@ -122,7 +122,7 @@ The original setup of this repository is by [BaskinB](https://github.com/BaskinB
 
 ## License
 
-This project is licensed under the **GNU 3 license**.
+This project is licensed under the **GPL-3.0 license**.
 
 See [LICENSE](LICENSE) for more information.
 
