@@ -32,7 +32,7 @@
 - [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Support](#support)
-- [Author](#authors)
+- [Author](#author)
 - [Acknowledgements](#acknowledgements)
 
 </details>
@@ -40,25 +40,28 @@
 ---
 
 ## About
+> **[?]**
 > A RedM script that seamlessly facilitates the streamlined management of appointments within businesses by enabling the creation of appointments and providing a user-friendly interface thanks to Feather Menu for employees to effortlessly check and manage them.
 
 <details>
 <summary>Screenshots</summary>
 <br>
 
-![Regular Menu](https://imgur.com/TTZu9BU)
-<br>
+> **[?]**
+> Please provide your screenshots here.
 
-![Employee Menu](https://imgur.com/OFbV7Bo)
-<br>
+|                               Regular Menu                               |
+| :-------------------------------------------------------------------: |
+| <img src="https://github.com/BaskinB/baskin_appointments/assets/54458253/3337eeed-7c3b-4000-bcc1-cd5328bbc53a" width="100%"> |
+|                               **Employee Menu**                                 |
+| <img src="https://github.com/BaskinB/baskin_appointments/assets/54458253/d7c0ab94-9253-4a5d-8861-8ad46fdc431b" width="100%"> |
+|                               **Scheduling Menu**                                 |
+| <img src="https://github.com/BaskinB/baskin_appointments/assets/54458253/226d2f21-3809-406e-809d-1e47d90c87bc" width="100%"> |
+|                               **View Appointments Menu**                                 |
+| <img src="https://github.com/BaskinB/baskin_appointments/assets/54458253/d26e6ffa-f2cb-4a16-bde2-985a98947193" width="100%"> |
+|                               **View Appointments Menu**                                 |
+| <img src="https://github.com/BaskinB/baskin_appointments/assets/54458253/6ec4b566-2d3d-4263-ad5b-a7b0fd8d2b9e" width="100%"> |
 
-![Schedule Appointment Menu](https://imgur.com/LNSlla5)
-<br>
-
-![View Appointments Menu](https://imgur.com/MVkLiff)
-<br>
-
-![Appointment Menu](https://imgur.com/nIJoUbe)
 </details>
 
 ## Getting Started
@@ -82,27 +85,36 @@
 ## Usage
 
 > The table below explains each configuration option and what
-|                               Option                               |                               Descript                              |
-| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
+
+**Base Settings**
+ | Options | Description                                | Usage       |
+|---------------|--------------------------------------------|-------------|
+| defaultLang   | Choose a Language                          | en, fr, etc |
+| debug         | Enable or Disable Debug mode!              | true/false  |
+| Year          | Choose what Year is saved to the Timestamp | string      |
+
+**Business Settings**
+| Option | Description                               | Usage       |
+|---------------|--------------------------------------------|-------------|
+| Name | Assign a name for the Business, such as the Job Name. | string |
+| Job | Assign the Job which the appointments belong to. | string |
+| Location | Assign a location for the menu. | vector3 |
 
 ## Roadmap
 
-See the [open issues](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/BaskinB/baskin_appointments/issues) for a list of proposed features (and known issues).
 
-- [Top Feature Requests](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Top Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Newest Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+- [Top Feature Requests](https://github.com/BaskinB/baskin_appointments/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
+- [Top Bugs](https://github.com/GBaskinB/baskin_appointments/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
+- [Newest Bugs](https://github.com/BaskinB/baskin_appointments/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ## Support
 
 
 > Provide additional ways to contact the project maintainer/maintainers.
 
-Reach out to the maintainer at one of the following places:
-
-- [GitHub issues](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
-- Contact options listed on [this GitHub profile](https://github.com/GITHUB_USERNAME)
+Reach out to Baskin here:
+- [GitHub issues](https://github.com/BaskinB/baskin_appointments/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
 
 ## Author
 
@@ -110,7 +122,7 @@ The original setup of this repository is by [BaskinB](https://github.com/BaskinB
 
 ## License
 
-This project is licensed under the **MIT license**.
+This project is licensed under the **GNU license**.
 
 See [LICENSE](LICENSE) for more information.
 
