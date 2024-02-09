@@ -12,7 +12,7 @@
   <h1 align="center">Baskin Appointments</h1>
 
   <p align="center">
-    A RedM script developed with love by BaskinB!
+    A RedM script Developed by BaskinB!
     <br />
     <a href="#about"><strong>Explore the screenshots »</strong></a>
     <br />
@@ -33,7 +33,8 @@
 [![Issues][issues-shield]][issues-url]
 [![GPL-3.0 License][license-shield]][license-url]
 
-[![code with love by BaskinB](https://img.shields.io/badge/%3C%2F%3E%20With%20%E2%99%A5%20By-BaskinB-ff1414.svg?style=for-the-badge)](https://github.com/BaskinB)
+[![code with love by BaskinB](https://img.shields.io/badge/%3C%2F%3E%20With%20%E2%99%A5%20By-BaskinB-ff1414.svg?style=flat-badge)](https://github.com/BaskinB)
+
 ### Built With
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
