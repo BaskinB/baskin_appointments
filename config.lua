@@ -3,15 +3,15 @@ Config = {
     Debug = false,
     Year = "1901",
     Businesses = {
+    --[[{
+            name = "Example", -- Business Name
+            job = "example", -- Business Job
+            location = vector3(-810.58, -1277.49, 43.69) -- Blackwater Bank
+        },]]
         {
-            name = "Double Barrel Stables",
-            job = "doublebarrel",
-            location = vector3(-2415.21, -2426.46, 60.29)
-        },
-        {
-            name = "Western Union Bank",
-            job = "banker",
-            location = vector3(-810.58, -1277.49, 43.69)
+            name = "Western Union Bank", -- Business Name
+            job = "banker", -- Business Job
+            location = vector3(-810.58, -1277.49, 43.69) -- Blackwater Bank
         },
     }
 }
