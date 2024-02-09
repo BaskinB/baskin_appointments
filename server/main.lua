@@ -28,7 +28,7 @@ RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(appointment
         if appointments and #appointments > 0 then
             TriggerClientEvent('tgrp_appointments:DisplayAllAppointments', _source, appointments)
         else
-            VORPcore.NotifyObjective(_source,_U("noappointmenttext"),4000)
+            VORPcore.NotifyObjective(_source,_U("noAppointmentText"),4000)
             print('\027[1m\027[31m[Error] \027[0mNo appointments found for the specified job')
         end
     end)

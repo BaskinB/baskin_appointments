@@ -8,19 +8,18 @@ author 'Baskin'
 
 client_scripts {
    'client/menu.lua',
-   'client/functions.lua'
+   'client/helpers/functions.lua'
 }
 
 server_scripts {
    '@oxmysql/lib/MySQL.lua',
    'server/main.lua',
-   'server/functions.lua',
+   'server/helpers/functions.lua',
 }
 
 shared_scripts {
    'config.lua',
-   'shared/functions.lua',
-   'shared/locale.lua',
+   'locale.lua',
    'languages/*.lua'
 }
 

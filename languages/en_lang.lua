@@ -3,30 +3,30 @@
 
 Locales["en_lang"] = {
     -- Subheaders
-    optiontext = "Choose an Option.",
-    scheduletext = "Schedule an Appointment",
-    picktext = "Pick an Apppointment to View!",
-    telegramtext = "Telegram",
-    reasontext = "Reason",
-    noappointmenttext = "There are currently no appointments to view.",
+    optionText = "Choose an Option.",
+    scheduleText = "Schedule an Appointment",
+    pickText = "Pick an Apppointment to View!",
+    telegramText = "Telegram",
+    reasonText = "Reason",
+    noAppointmentText = "There are currently no appointments to view.",
     -- Prompts
-    scheduleprompt = "Appointments",
+    schedulePrompt = "Appointments",
     -- Buttons
-    schedulebutton = "Schedule Appointment",
-    viewbutton = "View Appointments",
-    submitbutton = "Submit",
-    deletebutton = "Delete",
-    closebutton = "Close",
-    backbutton = "Back",
+    scheduleButton = "Schedule Appointment",
+    viewButton = "View Appointments",
+    submitButton = "Submit",
+    deleteButton = "Delete",
+    closeButton = "Close",
+    backButton = "Back",
     -- Labels
-    namelabel = "Name",
-    telelabel = "Telegram Number",
-    reasonlabel = "Appointment Reason",
+    nameLabel = "Name",
+    teleLabel = "Telegram Number",
+    reasonLabel = "Appointment Reason",
     -- Placeholders
-    nameplace = "First Last!",
-    teleplace = "Telegram #",
-    reasonplace = "Write Your Appointment Reason Here!",
+    namePlace = "First Last!",
+    telePlace = "Telegram #",
+    reasonPlace = "Write Your Appointment Reason Here!",
     -- Notifications
-    schedulenotify = "You've scheduled an Appointment with ~e~",
-    deletenotify = "You've removed the Appointment!"
+    scheduleNotify = "You've scheduled an Appointment with ~e~",
+    deleteNotify = "Appointment ~t6~Sucessfully ~q~Deleted!"
 }
