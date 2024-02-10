@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   `telegram` varchar(50) DEFAULT NULL,
   `created_at` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
