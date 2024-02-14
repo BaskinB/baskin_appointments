@@ -116,8 +116,8 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 
 
 1. Download this repo/release
-2. Extract and place `tgrp_appointments` into your `resources` folder
-3. Add `ensure tgrp_appointments` to your `server.cfg` file
+2. Extract and place `baskin_appointments` into your `resources` folder
+3. Add `ensure baskin_appointments` to your `server.cfg` file
 4. Run the SQL code for your database.
 4. Restart your server
 
