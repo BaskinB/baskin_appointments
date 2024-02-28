@@ -1,8 +1,8 @@
 --[[ Credits to Fistofury for the general menu code formatting ]]
 
 CreateThread(function()
-	local PromptGroup = BccUtils.Prompts:SetupPromptGroup() -- Setup Prompt Group
-	local firstPrompt = PromptGroup:RegisterPrompt(_U("schedulePrompt"), 0x760A9C6F, 1, 1, true, 'hold', { timedeventhash = "MEDIUM_TIMED_EVENT" }) -- Register your first prompt
+    local PromptGroup = BccUtils.Prompts:SetupPromptGroup() -- Setup Prompt Group
+    local firstPrompt = PromptGroup:RegisterPrompt(_U("schedulePrompt"), 0x760A9C6F, 1, 1, true, 'hold', { timedeventhash = "MEDIUM_TIMED_EVENT" }) -- Register your first prompt
     while true do
         Wait(1)
         local inMenu = false -- Define and initialize inMenu here
