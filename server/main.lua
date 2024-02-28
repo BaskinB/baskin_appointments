@@ -1,4 +1,4 @@
-RegisterServerEvent('tgrp_appointments:InsertCreatedAppointmentIntoDB', function(appointmentData)
+RegisterServerEvent('baskin_appointments:InsertCreatedAppointmentIntoDB', function(appointmentData)
     local timestamp = os.date("%m/%d/" .. Config.Year)
     local query = "INSERT INTO appointments (id, job, charname, reason, telegram, created_at) VALUES (?, ?, ?, ?, ?, ?)"
 
@@ -18,7 +18,7 @@ RegisterServerEvent('tgrp_appointments:InsertCreatedAppointmentIntoDB', function
     end)
 end)
 
-RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(appointmentId)
+RegisterServerEvent('baskin_appointments:GetAllAppointments', function(appointmentId)
     local _source = source
     local Character = VORPcore.getUser(source).getUsedCharacter
     local job = Character.job
@@ -26,7 +26,7 @@ RegisterServerEvent('tgrp_appointments:GetAllAppointments', function(appointment
     local query = "SELECT id, charname, telegram, reason, created_at FROM appointments WHERE job = @job"
     MySQL.query(query, {['@job'] = job}, function(appointments)
         if appointments and #appointments > 0 then
-            TriggerClientEvent('tgrp_appointments:DisplayAllAppointments', _source, appointments)
+            TriggerClientEvent('baskin_appointments:DisplayAllAppointments', _source, appointments)
         else
             VORPcore.NotifyObjective(_source,_U("noAppointmentText"),4000)
             print('\027[1m\027[31m[Error] \027[0mNo appointments found for the specified job')

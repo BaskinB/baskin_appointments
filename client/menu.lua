@@ -44,7 +44,7 @@ function OpenMainMenu()
         local playerCoords = GetEntityCoords(playerPed)
 		local dist = #(playerCoords - business.location)
 		if not mainMenu then
-			mainMenu = FeatherMenu:RegisterMenu('tgrp_appointment:mainMenu', {
+			mainMenu = FeatherMenu:RegisterMenu('baskin_appointment:mainMenu', {
 				top = '10%',
 				left = '2%',
 				['720width'] = '600px',
@@ -216,7 +216,7 @@ function OpenMainMenu()
 						--local desc = "**Business Name:** \n "..name.."\n\n **Name:** \n"..charname.."\n\n **Telegram Number:** \n"..telegram.."\n\n **Reason:** \n"..reason
 						--VORPcore.AddWebhook("Business Appointment",webhook,desc)
 						local appointmentData = { job = business.job, charname = charname, reason = reason, telegram = telegram, created_at = timestamp}
-						TriggerServerEvent("tgrp_appointments:InsertCreatedAppointmentIntoDB", appointmentData)
+						TriggerServerEvent("baskin_appointments:InsertCreatedAppointmentIntoDB", appointmentData)
 						VORPcore.NotifyObjective(_U("scheduleNotify")..business.name,5000)
 						mainPage:RouteTo()
 				end)
@@ -249,7 +249,7 @@ function OpenMainMenu()
 							soundset = "RDRO_Character_Creator_Sounds"
 						},
 					}, function()
-						TriggerServerEvent('tgrp_appointments:GetAllAppointments', job)
+						TriggerServerEvent('baskin_appointments:GetAllAppointments', job)
 					end)
 				end
 			end
@@ -298,7 +298,7 @@ function OpenMainMenu()
 	end
 end
 	
-RegisterNetEvent('tgrp_appointments:DisplayAllAppointments', function (appointments)
+RegisterNetEvent('baskin_appointments:DisplayAllAppointments', function (appointments)
 	checkAppointmentPage = nil
 	OpenMainMenu(true)
 	for _, appointment in ipairs(appointments) do
