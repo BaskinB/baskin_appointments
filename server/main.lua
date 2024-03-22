@@ -12,6 +12,13 @@ RegisterServerEvent('baskin_appointments:InsertCreatedAppointmentIntoDB', functi
     }, function(rowsChanged)
         if rowsChanged > 0 then
             print("\027[1m\027[32m[Success] \027[0mAppointment inserted successfully!")
+            for _, business in ipairs(Config.Businesses) do
+                if business.job == appointmentData.job then
+                    local message = "New appointment created for: " .. appointmentData.charname .. " For the reason:" ..appointmentData.reason
+                    BccUtils.Discord.sendMessage(business.webhook, 'Appointment System', 'https://cdn2.iconfinder.com/data/icons/frosted-glass/256/Danger.png', 'New Appointment', message)
+                    break
+                end
+            end
         else
             print("\027[1m\027[31m[Error] \027[0mFailed to insert appointment.")
         end
