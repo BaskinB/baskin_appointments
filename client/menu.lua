@@ -1,8 +1,23 @@
 --[[ Credits to Fistofury for the general menu code formatting ]]
+local CreatedNpcs = {}
 
 CreateThread(function()
     local PromptGroup = BccUtils.Prompts:SetupPromptGroup() -- Setup Prompt Group
     local firstPrompt = PromptGroup:RegisterPrompt(_U("schedulePrompt"), 0x760A9C6F, 1, 1, true, 'hold', { timedeventhash = "MEDIUM_TIMED_EVENT" }) -- Register your first prompt
+
+    for k,v in pairs(Config.Businesses) do
+		local coords = GetEntityCoords(PlayerPedId())
+		if v.npc then
+			local distance =  #(coords - v.location)
+			if distance < 50 then
+				local ped = BccUtils.Ped:Create(v.model, v.location.x, v.location.y, v.location.z, -1, 'world', false)
+				CreatedNpcs[#CreatedNpcs + 1] = ped
+				ped:Freeze()
+				ped:SetHeading(v.heading)
+				ped:Invincible() 
+			end  
+		end
+    end
     while true do
         Wait(1)
         local inMenu = false -- Define and initialize inMenu here
