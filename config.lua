@@ -11,7 +11,6 @@
 
 Config = {
     defaultLang = "en_lang",
-    Debug = false,
     Year = "1901",
     Businesses = {
     --[[{
