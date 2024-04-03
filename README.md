@@ -129,7 +129,6 @@ The table below explains each configuration option and what
  | Options | Description                                | Usage       |
 |---------------|--------------------------------------------|-------------|
 | defaultLang   | Choose a Language                          | en, fr, etc |
-| debug         | Enable or Disable Debug mode!              | true/false  |
 | Year          | Choose what Year is saved to the Timestamp | string      |
 
 **Business Settings**
