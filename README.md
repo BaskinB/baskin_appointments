@@ -119,7 +119,7 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 2. Extract and place `baskin_appointments` into your `resources` folder
 3. Add `ensure baskin_appointments` to your `server.cfg` file
 4. Run the SQL code for your database.
-4. Restart your server
+5. Restart your server
 
 ## Usage
 
