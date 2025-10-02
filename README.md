@@ -109,8 +109,8 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 
 ### Prerequisites
 
-- [BCC-Utils](https://github.com/BryceCanyonCounty/bcc-utils)
-- [Feather Menu](https://github.com/FeatherFramework/feather-menu)
+- BCC-Utils
+- Feather Menu
 - [Vorp Core](https://github.com/VORPCORE/vorp-core-lua)
 - [Vorp Character](https://github.com/VORPCORE/vorp_character-lua)
 
