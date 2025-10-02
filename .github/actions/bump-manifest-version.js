@@ -2,7 +2,7 @@ const fxManifest = await Bun.file('./fxmanifest.lua').text();
 const versionFile = await Bun.file('./version').text();
 
 let newVersion = process.env.TGT_RELEASE_VERSION;
-newVersion = newVersion.replace('');
+newVersion = newVersion.replace(/^v/, '');
 
 const newFileContent = fxManifest.replace(/\bversion\s+(.*)$/gm, `version '${newVersion}'`);
 const versionContent = versionFile.replace(/<.*>/, `<${newVersion}>`);

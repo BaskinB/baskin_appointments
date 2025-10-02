@@ -1,11 +1,11 @@
 -- -----------------------------------------------------
--- 		____            _    _       _     
--- 		|  _ \          | |  (_)     | |    
--- 		| |_) | __ _ ___| | ___ _ __ | |__  
--- 		|  _ < / _` / __| |/ / | '_ \| '_ \ 
+-- 		____            _    _       _
+-- 		|  _ \          | |  (_)     | |
+-- 		| |_) | __ _ ___| | ___ _ __ | |__
+-- 		|  _ < / _` / __| |/ / | '_ \| '_ \
 -- 		| |_) | (_| \__ \   <| | | | | |_) |
--- 		|____/ \__,_|___/_|\_\_|_| |_|_.__/ 
--- 
+-- 		|____/ \__,_|___/_|\_\_|_| |_|_.__/
+--
 -- 		Written and Developed by Baskin
 -- -----------------------------------------------------
 
@@ -14,33 +14,33 @@ rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aw
 
 game 'rdr3'
 lua54 'yes'
-version 'undefined1.0.6'
+version '1.0.6'
 author 'Baskin'
 
 client_scripts {
-   'client/menu.lua',
-   'client/helpers/functions.lua'
+  'client/menu.lua',
+  'client/helpers/functions.lua'
 }
 
 server_scripts {
-   '@oxmysql/lib/MySQL.lua',
-   'server/main.lua',
-   'server/helpers/functions.lua',
+  '@oxmysql/lib/MySQL.lua',
+  'server/main.lua',
+  'server/helpers/functions.lua',
 }
 
 shared_scripts {
-   'config.lua',
-   'locale.lua',
-   'languages/*.lua'
+  'config.lua',
+  'locale.lua',
+  'languages/*.lua'
 }
 
 --------------------------------------------------------------------------------------
 
 ---------------- Dependencies -------------------------------------------------------
 ---- What other scripts (if any) does your script depend on. REMOVE THIS IF NONE ----
-dependencies { 
-    'vorp_core',
-    'vorp_character',
-    'bcc-utils',
-    'feather-menu',
+dependencies {
+  'vorp_core',
+  'vorp_character',
+  'bcc-utils',
+  'feather-menu',
 }
