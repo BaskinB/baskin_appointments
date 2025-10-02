@@ -1,5 +1,3 @@
-This is an updated version, all credit given to Baskin.
-
 <a name="readme-top"></a>
 
 <div align="center">
