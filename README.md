@@ -1,3 +1,5 @@
+This is an updated version, all credit given to Baskin.
+
 <a name="readme-top"></a>
 
 <div align="center">
@@ -119,7 +121,7 @@ A RedM script that seamlessly facilitates the streamlined management of appointm
 2. Extract and place `baskin_appointments` into your `resources` folder
 3. Add `ensure baskin_appointments` to your `server.cfg` file
 4. Run the SQL code for your database.
-5. Restart your server
+4. Restart your server
 
 ## Usage
 
@@ -129,6 +131,7 @@ The table below explains each configuration option and what
  | Options | Description                                | Usage       |
 |---------------|--------------------------------------------|-------------|
 | defaultLang   | Choose a Language                          | en, fr, etc |
+| debug         | Enable or Disable Debug mode!              | true/false  |
 | Year          | Choose what Year is saved to the Timestamp | string      |
 
 **Business Settings**

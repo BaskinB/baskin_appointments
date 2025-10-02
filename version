@@ -1,3 +1,1 @@
 <1.0.5>
-* Fixes Typo in server/helper/functions.lua(Thank you Fuzzy)
-* Fixes `attempt to index a nil value (Global 'VORPcore')`(Thank you Kenkyusha for pointing this out.)
